@@ -4,6 +4,12 @@ import './App.css';
 import { ethers } from "ethers";
 import {getSimpleAccount} from "./getSimpleAccount";
 
+declare global {
+  interface Window {
+    handleCredentialResponse?: any;
+  }
+}
+
 const config = {
   "bundlerUrl": "https://app.stackup.sh/api/v1/bundler/53d0330784afd774991fae557b292422f3671668e38b8b282cd30b81cd1d411e",
   "rpcUrl": "https://rpc-mumbai.maticvigil.com/",
@@ -39,24 +45,34 @@ const helloWorld = () => {
 
 // module.exports = { helloWorld };
 
-helloWorld()
+// helloWorld()
 
 function App() {
+  window.handleCredentialResponse = () => { 
+    console.log("handleCredentialResponse")
+    helloWorld()
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>Hi</div>
+        <div id="g_id_onload"
+          data-client_id="247332257621-9rev3pq5eef71olb55jvu8b2gkbd5c1h.apps.googleusercontent.com"
+          data-context="signin"
+          data-ux_mode="popup"
+          data-callback="handleCredentialResponse"
+          data-auto_prompt="false">
+        </div>
+
+        <div className="g_id_signin"
+          data-type="standard"
+          data-shape="rectangular"
+          data-theme="outline"
+          data-text="continue_with"
+          data-size="large"
+          data-logo_alignment="left">
+        </div>
       </header>
     </div>
   );
