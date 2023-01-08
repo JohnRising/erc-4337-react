@@ -5,11 +5,11 @@ import { ethers } from "ethers";
 import {getSimpleAccount} from "./getSimpleAccount";
 
 const config = {
-  "bundlerUrl": "http://localhost:4337",
+  "bundlerUrl": "https://app.stackup.sh/api/v1/bundler/53d0330784afd774991fae557b292422f3671668e38b8b282cd30b81cd1d411e",
   "rpcUrl": "https://rpc-mumbai.maticvigil.com/",
   "signingKey": "0x094ddde528fa30e0ab36eaabc6256a7bc78fb2953d21d31447b9577f855e1795",
-  "entryPoint": "0x78d4f01f56b982a3B03C4E127A5D3aFa8EBee686",
-  "simpleAccountFactory": "0xe19E9755942BB0bD0cCCCe25B1742596b8A8250b"
+  "entryPoint": "0x1306b01bC3e4AD202612D3843387e94737673F53",
+  "simpleAccountFactory": "0xc99963686CB64e3B98DF7E877318D02D85DFE326"
 }
 
 
