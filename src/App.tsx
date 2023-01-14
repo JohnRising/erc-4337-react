@@ -17,9 +17,11 @@ const config = {
 }
 
 function App() {
-  window.handleCredentialResponse = () => { 
+  window.handleCredentialResponse = async () => { 
     console.log("handleCredentialResponse")
-    getAccount(config)
+
+    const account = await getAccount(config)
+    console.log(account)
   };
 
   return (
